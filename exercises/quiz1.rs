@@ -9,8 +9,8 @@
 
 // Put your function here!
 fn calculate_apple_price(rustbucks: i32) -> i32 {
-    let apples = if rustbucks > 40 { 1 } else { 2 };
-    rustbucks * apples
+    let apple_price = if rustbucks > 40 { 1 } else { 2 };
+    rustbucks * apple_price
 }
 
 // Don't modify this function!
