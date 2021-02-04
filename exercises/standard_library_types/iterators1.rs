@@ -13,10 +13,16 @@ fn main () {
 
     let mut my_iterable_fav_fruits = my_fav_fruits.iter();
 
+    println!("{:?}", my_iterable_fav_fruits);
     assert_eq!(my_iterable_fav_fruits.next(), Some(&"banana"));
+    println!("{:?}", my_iterable_fav_fruits);
     assert_eq!(my_iterable_fav_fruits.next(), Some(&"custard apple"));
+    println!("{:?}", my_iterable_fav_fruits);
     assert_eq!(my_iterable_fav_fruits.next(), Some(&"avocado"));
+    println!("{:?}", my_iterable_fav_fruits);
     assert_eq!(my_iterable_fav_fruits.next(), Some(&"peach"));
+    println!("{:?}", my_iterable_fav_fruits);
     assert_eq!(my_iterable_fav_fruits.next(), Some(&"raspberry"));
+    println!("{:?}", my_iterable_fav_fruits);
     assert_eq!(my_iterable_fav_fruits.next(), None);
 }
