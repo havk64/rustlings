@@ -19,8 +19,6 @@ pub fn capitalize_first(input: &str) -> String {
 mod tests {
     use super::*;
 
-    // Step 1.
-    // Tests that verify your `capitalize_first` function implementation
     #[test]
     fn test_success() {
         assert_eq!(capitalize_first("hello"), "Hello");
@@ -31,7 +29,6 @@ mod tests {
         assert_eq!(capitalize_first(""), "");
     }
 
-    // Step 2.
     #[test]
     fn test_iterate_string_vec() {
         let words = vec!["hello", "world"];
