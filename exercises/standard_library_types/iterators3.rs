@@ -67,15 +67,16 @@ mod tests {
     }
 
     // Iterator exercises using your `divide` function
-    /*
+
     #[test]
     fn result_with_list() {
         let numbers = vec![27, 297, 38502, 81];
         let division_results = numbers.into_iter().map(|n| divide(n, 27));
-        let x //... Fill in here!
+        let x: Result<Vec<i32>, DivisionError> = division_results.collect();
         assert_eq!(format!("{:?}", x), "Ok([1, 11, 1426, 3])");
     }
 
+    /*
     #[test]
     fn list_of_results() {
         let numbers = vec![27, 297, 38502, 81];
