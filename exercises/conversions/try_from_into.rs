@@ -25,19 +25,92 @@ struct Color {
 // Tuple implementation
 impl TryFrom<(i16, i16, i16)> for Color {
     type Error = String;
-    fn try_from(tuple: (i16, i16, i16)) -> Result<Self, Self::Error> {}
+    fn try_from(tuple: (i16, i16, i16)) -> Result<Self, Self::Error> {
+        let red: u8;
+        let green: u8;
+        let blue: u8;
+
+        if (0..256).contains(&tuple.0) {
+            red = tuple.0 as u8;
+        } else {
+            return Err(String::from("Error message"))
+        }
+
+        if (0..256).contains(&tuple.1) {
+            green = tuple.1 as u8;
+        } else {
+            return Err(String::from("Error message"))
+        }
+
+        if (0..256).contains(&tuple.2) {
+            blue = tuple.2 as u8;
+        } else {
+            return Err(String::from("Error message"))
+        }
+
+        Ok(Color { red, green, blue })
+    }
 }
 
 // Array implementation
 impl TryFrom<[i16; 3]> for Color {
     type Error = String;
-    fn try_from(arr: [i16; 3]) -> Result<Self, Self::Error> {}
+    fn try_from(arr: [i16; 3]) -> Result<Self, Self::Error> {
+        let red: u8;
+        let green: u8;
+        let blue: u8;
+        if (0..256).contains(&arr[0]) {
+            red = arr[0] as u8;
+        } else {
+            return Err(String::from("Error"))
+        }
+
+        if (0..256).contains(&arr[1]) {
+            green = arr[1] as u8;
+        } else {
+            return Err(String::from("Error"))
+        }
+
+        if (0..256).contains(&arr[2]) {
+            blue = arr[2] as u8;
+        } else {
+            return Err(String::from("Error"))
+        }
+
+        Ok(Color { red, green, blue })
+    }
 }
 
 // Slice implementation
 impl TryFrom<&[i16]> for Color {
     type Error = String;
-    fn try_from(slice: &[i16]) -> Result<Self, Self::Error> {}
+    fn try_from(slice: &[i16]) -> Result<Self, Self::Error> {
+        let red: u8;
+        let green: u8;
+        let blue: u8;
+        if slice.len() != 3 {
+            return Err(String::from("Error"))
+        }
+        if (0..256).contains(&slice[0]) {
+            red = slice[0] as u8;
+        } else {
+            return Err(String::from("Error"))
+        }
+
+        if (0..256).contains(&slice[1]) {
+            green = slice[1] as u8;
+        } else {
+            return Err(String::from("Error"))
+        }
+
+        if (0..256).contains(&slice[2]) {
+            blue = slice[2] as u8;
+        } else {
+            return Err(String::from("Error"))
+        }
+
+        Ok(Color { red, green, blue })
+    }
 }
 
 fn main() {
