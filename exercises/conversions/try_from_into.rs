@@ -28,11 +28,15 @@ impl TryFrom<(i16, i16, i16)> for Color {
     fn try_from(tuple: (i16, i16, i16)) -> Result<Self, Self::Error> {
         for color in &[tuple.0, tuple.1, tuple.2] {
             if !(0..256).contains(&tuple.0) {
-                return Err(String::from("Error message"))
+                return Err(String::from("Error message"));
             }
         }
 
-        Ok(Color { red: tuple.0 as u8, green: tuple.1 as u8, blue: tuple.2 as u8 })
+        Ok(Color {
+            red: tuple.0 as u8,
+            green: tuple.1 as u8,
+            blue: tuple.2 as u8,
+        })
     }
 }
 
@@ -42,11 +46,15 @@ impl TryFrom<[i16; 3]> for Color {
     fn try_from(arr: [i16; 3]) -> Result<Self, Self::Error> {
         for color in arr.iter() {
             if !(0..256).contains(color) {
-                return Err(String::from("Error"))
+                return Err(String::from("Error"));
             }
         }
 
-        Ok(Color { red: arr[0] as u8, green: arr[1] as u8, blue: arr[2] as u8 })
+        Ok(Color {
+            red: arr[0] as u8,
+            green: arr[1] as u8,
+            blue: arr[2] as u8,
+        })
     }
 }
 
@@ -55,15 +63,19 @@ impl TryFrom<&[i16]> for Color {
     type Error = String;
     fn try_from(slice: &[i16]) -> Result<Self, Self::Error> {
         if slice.len() != 3 {
-            return Err(String::from("Error"))
+            return Err(String::from("Error"));
         }
         for color in slice.iter() {
             if !(0..256).contains(color) {
-                return Err(String::from("Error"))
+                return Err(String::from("Error"));
             }
         }
 
-        Ok(Color { red: slice[0] as u8, green: slice[1] as u8, blue: slice[2] as u8 })
+        Ok(Color {
+            red: slice[0] as u8,
+            green: slice[1] as u8,
+            blue: slice[2] as u8,
+        })
     }
 }
 
