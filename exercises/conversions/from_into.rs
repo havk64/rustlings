@@ -19,15 +19,15 @@ impl From<&str> for Person {
         let mut splitted = s.split(',');
         let name: &str;
         let age: usize;
-  
+
         if let Some(first) = splitted.next() {
-            if !first.is_empty() { 
+            if !first.is_empty() {
                 name = first;
-            } else  {
-                return Person::default()
+            } else {
+                return Person::default();
             }
         } else {
-            return Person::default()
+            return Person::default();
         }
 
         if let Some(second) = splitted.next() {
@@ -36,11 +36,11 @@ impl From<&str> for Person {
                 Err(_) => return Person::default(),
             }
         } else {
-            return Person::default()
+            return Person::default();
         }
 
         if splitted.next() != None {
-            return Person::default()
+            return Person::default();
         }
 
         Person {
