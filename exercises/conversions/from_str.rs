@@ -39,18 +39,14 @@ impl FromStr for Person {
                 }
                 s
             }
-            Err(e) => {
-                return Err(String::from("Error"))
-            }
+            Err(e) => return Err(String::from("Error")),
         };
         let age = match person[1].parse::<usize>() {
             Ok(n) => n,
-            Err(e) => {
-                return Err(String::from("Error"))
-            }
+            Err(e) => return Err(String::from("Error")),
         };
 
-        Ok(Person{name, age})
+        Ok(Person { name, age })
     }
 }
 
