@@ -74,9 +74,7 @@ mod tests {
     fn greater_than_eleven_fruits() {
         let mut basket = get_fruit_basket();
         fruit_basket(&mut basket);
-        let count = basket
-            .values()
-            .sum::<u32>();
+        let count = basket.values().sum::<u32>();
         assert!(count > 11);
     }
 }
