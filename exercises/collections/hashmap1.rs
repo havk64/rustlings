@@ -21,7 +21,6 @@ fn fruit_basket() -> HashMap<String, u32> {
     basket.insert(String::from("pear"), 3);
     basket.insert(String::from("avocado"), 4);
 
-
     basket
 }
 
@@ -38,8 +37,6 @@ mod tests {
     #[test]
     fn at_least_five_fruits() {
         let basket = fruit_basket();
-        assert!(basket
-            .values()
-            .sum::<u32>() >= 5);
+        assert!(basket.values().sum::<u32>() >= 5);
     }
 }
