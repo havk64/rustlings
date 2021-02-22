@@ -25,11 +25,13 @@ pub struct NotDivisibleError {
 pub fn divide(a: i32, b: i32) -> Result<i32, DivisionError> {
     if b == 0 {
         Err(DivisionError::DivideByZero)
-    }
-    else if a % b == 0 {
+    } else if a % b == 0 {
         Ok(a / b)
     } else {
-        Err(DivisionError::NotDivisible(NotDivisibleError{ dividend: a,divisor: b }))
+        Err(DivisionError::NotDivisible(NotDivisibleError {
+            dividend: a,
+            divisor: b,
+        }))
     }
 }
 
